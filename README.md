@@ -23,5 +23,6 @@ study
     13  14  15  16
 ``` 
 则依次打印输出：1、2、3、4、8、12、16、15、14、13、9、5、6、7、11、10  
-代码包com.tsh.exam.ArrayRightReadTest
+代码包com.tsh.exam.ArrayRightReadTest  
+该代码可实现顺时或逆时输出，获得读取步数，更高级功能可实现随机行走方向，类似贪吃蛇效果。
 
