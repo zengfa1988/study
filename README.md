@@ -72,7 +72,7 @@ study
 
 这是线状流程，只对有序数组有效，可以变形处理环状流程，最大数组时转到最小数   
 ![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange4.png)     
-代码https://github.com/zengfa1988/study/blob/master/src/main/java/com/tsh/exam/arrange/DictArrangeTest.java   
+代码[全排列-字典排序](https://github.com/zengfa1988/study/blob/master/src/main/java/com/tsh/exam/arrange/DictArrangeTest.java)   
 
 
 
