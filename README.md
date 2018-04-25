@@ -52,11 +52,12 @@ study
 输入12435，返回12453
 ```
 为了和原数接近，我们需要尽量保持高位不变，低位在最小的范围内变换顺序。低位的范围取决于逆序区域   
-![](https://github.com/zengfa1988/study/blob/master/ImageCache/640.png)   
+![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange1.png)   
 如果所示，12354的逆序区域是最后两位，仅看这两位已经是当前的最大组合。若想最接近原数，又比原数更大，必须从倒数第3位开始改变。   
 12345的倒数第3位是3，我们需要从后面的逆序区域中寻找到刚刚大于3的数字，和3的位置进行互换：   
-图片   
+![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange2.png)   
 互换后的临时结果是12453，倒数第3位已经确定，这时候最后两位仍然是逆序状态。我们需要把最后两位转变回顺序，以此保证在倒数第3位数值为4的情况下，后两位尽可能小：   
+![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange3.png)   
 这样一来，我们就得到了想要的结果12435。   
 采用这种方式可以对数组进行全排列，给定一个数组，可以依次获得数组的下个换位数，从而得到全排列
 
@@ -70,7 +71,7 @@ study
 321|   |
 
 这是线状流程，只对有序数组有效，可以变形处理环状流程，最大数组时转到最小数   
-图片   
+![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange4.png)     
 代码https://github.com/zengfa1988/study/blob/master/src/main/java/com/tsh/exam/arrange/DictArrangeTest.java   
 
 
