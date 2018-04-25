@@ -11,7 +11,7 @@ study
 ## 目录
 * [算法](#算法)
     * 矩阵顺序输出
-    * 汽水替换问题
+    * 喝汽水问题
 
 算法
 ------
@@ -27,7 +27,7 @@ study
 代码https://github.com/zengfa1988/study/blob/master/src/main/java/com/tsh/exam/ArrayRightReadTest.java  
 该代码可实现顺时或逆时输出，获得读取步数，更高级功能可实现随机行走方向，类似贪吃蛇效果。
 
-### 汽水替换问题
+### 喝汽水问题
 2块钱可以买一瓶汽水瓶,4个瓶盖可换取一个汽水,2个空瓶可换取一个汽水,输入一个金额可喝多少瓶汽水
 代码包https://github.com/zengfa1988/study/blob/master/src/main/java/com/tsh/exam/bottle/BottleReplaceTest.java  
 该代码里的逻辑可通过规则引擎实现，目前是两个规则相互独立，没有交叉部分（一个规则里只有一个属性判断），更高级的规则里属性重叠，比如：
