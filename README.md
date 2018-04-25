@@ -57,7 +57,7 @@ study
 12345的倒数第3位是3，我们需要从后面的逆序区域中寻找到刚刚大于3的数字，和3的位置进行互换：   
 ![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange2.png)   
 互换后的临时结果是12453，倒数第3位已经确定，这时候最后两位仍然是逆序状态。我们需要把最后两位转变回顺序，以此保证在倒数第3位数值为4的情况下，后两位尽可能小：
-![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange3.png)
+![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange3.png)   
 这样一来，我们就得到了想要的结果12435。   
 采用这种方式可以对数组进行全排列，给定一个数组，可以依次获得数组的下个换位数，从而得到全排列
 
