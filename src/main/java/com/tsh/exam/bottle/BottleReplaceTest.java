@@ -1,4 +1,4 @@
-package com.tsh.exam;
+package com.tsh.exam.bottle;
 
 import java.util.HashMap;
 import java.util.Map;

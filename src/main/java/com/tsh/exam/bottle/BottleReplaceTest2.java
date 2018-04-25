@@ -1,9 +1,11 @@
-package com.tsh.exam;
+package com.tsh.exam.bottle;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.tsh.exam.ArrangeTest;
 
 /**
  * 喝汽水问题
