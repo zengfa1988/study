@@ -13,7 +13,7 @@ import java.util.List;
 public class DictArrangeTest {
 
 	public static void main(String[] args) {
-		int[] numbers = {2,1,3};
+		int[] numbers = {1,2,3};
 		List<int[]> list = dictArrange(numbers);
 		for(int[] a : list){
 			pArray(a);
