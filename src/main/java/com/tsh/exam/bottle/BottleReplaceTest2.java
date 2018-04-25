@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.tsh.exam.ArrangeTest;
+import com.tsh.exam.arrange.ArrangeTest;
 
 /**
  * 喝汽水问题

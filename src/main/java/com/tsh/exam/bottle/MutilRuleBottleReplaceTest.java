@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
-import com.tsh.exam.ArrangeTest;
+import com.tsh.exam.arrange.ArrangeTest;
+import com.tsh.exam.arrange.DictArrangeTest;
 
 /**
  * 多规则换汽水问题
@@ -94,8 +95,9 @@ public class MutilRuleBottleReplaceTest {
 		for(int i=0;i<ruleList.size();i++){
 			indexArray[i] = i;
 		}
-		List<int[]> priorityRuleIndexList = new ArrayList<int[]>();
-		ArrangeTest.arrange(indexArray, 0, ruleList.size(), priorityRuleIndexList);
+//		List<int[]> priorityRuleIndexList = new ArrayList<int[]>();
+//		ArrangeTest.arrange(indexArray, 0, ruleList.size(), priorityRuleIndexList);
+		List<int[]> priorityRuleIndexList = DictArrangeTest.dictArrange(indexArray);
 		for(int[] priorityRuleIndex : priorityRuleIndexList){
 			List<BottleReplaceRule> rules = new ArrayList<BottleReplaceRule>();
 			for(int index : priorityRuleIndex){
