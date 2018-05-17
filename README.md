@@ -1,6 +1,6 @@
 study
 ===========================
-该项目用于积累学习中的问题，记录一些有效的代码，其中包括一些算法题。 
+该项目用于积累学习中的问题，记录一些有效的代码，其中包括一些算法题、设计模式。 
 
 ****
 |Author|小曾|
@@ -13,6 +13,8 @@ study
     * 矩阵顺序输出
     * 喝汽水问题
     * 数组全排列
+* [设计模式](#设计模式)
+    * 工厂模式
 
 算法
 ------
@@ -74,6 +76,101 @@ study
 ![](https://github.com/zengfa1988/study/blob/master/ImageCache/DictArrange4.png)     
 代码[全排列-字典排序](https://github.com/zengfa1988/study/blob/master/src/main/java/com/tsh/exam/arrange/DictArrangeTest.java)   
 
+设计模式
+------
+### 工厂模式
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)   
+工厂模式是Java中应用最多的设计模式，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/factory_pattern_uml_diagram.jpg)
+第一步，创建一个接口Shape.java   
+```
+public interface Shape {
+   void draw();
+}
+```
+第二步，创建三个类（Rectangle、Square、Circle）实现同一个接口   
+```
+public class Rectangle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Rectangle::draw() method.");
+   }
+}
+```
 
+```
+public class Square implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Square::draw() method.");
+   }
+}
+```
 
+```
+public class Circle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Circle::draw() method.");
+   }
+}
+```
 
+第三步，创建工厂类   
+```
+public class ShapeFactory {
+	
+   //use getShape method to get object of type shape 
+   public Shape getShape(String shapeType){
+      if(shapeType == null){
+         return null;
+      }		
+      if(shapeType.equalsIgnoreCase("CIRCLE")){
+         return new Circle();
+         
+      } else if(shapeType.equalsIgnoreCase("RECTANGLE")){
+         return new Rectangle();
+         
+      } else if(shapeType.equalsIgnoreCase("SQUARE")){
+         return new Square();
+      }
+      
+      return null;
+   }
+}
+```
+
+第四步，测试   
+```
+public class FactoryPatternDemo {
+
+   public static void main(String[] args) {
+      ShapeFactory shapeFactory = new ShapeFactory();
+
+      //get an object of Circle and call its draw method.
+      Shape shape1 = shapeFactory.getShape("CIRCLE");
+
+      //call draw method of Circle
+      shape1.draw();
+
+      //get an object of Rectangle and call its draw method.
+      Shape shape2 = shapeFactory.getShape("RECTANGLE");
+
+      //call draw method of Rectangle
+      shape2.draw();
+
+      //get an object of Square and call its draw method.
+      Shape shape3 = shapeFactory.getShape("SQUARE");
+
+      //call draw method of circle
+      shape3.draw();
+   }
+}
+```
+
+运行结果：   
+```
+Inside Circle::draw() method.
+Inside Rectangle::draw() method.
+Inside Square::draw() method.
+```
