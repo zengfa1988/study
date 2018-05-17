@@ -81,7 +81,7 @@ study
 ### 工厂模式
 参考[设计模式](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)   
 工厂模式是Java中应用最多的设计模式，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：
-![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/factory_pattern_uml_diagram.jpg)
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/factory_pattern_uml_diagram.jpg)   
 第一步，创建一个接口Shape.java   
 ```
 public interface Shape {
