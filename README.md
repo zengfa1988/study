@@ -81,6 +81,7 @@ study
 ------
 ### 工厂模式
 参考[设计模式](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/factoryPattern)   
 工厂模式是Java中应用最多的设计模式，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：
 ![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/factory_pattern_uml_diagram.jpg)   
 第一步，创建一个接口Shape.java   
@@ -178,6 +179,7 @@ Inside Square::draw() method.
 
 ### 抽象工厂模式
 参考[设计模式](https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/abstractFactoryPattern)   
 抽象工厂模式是通过超级工厂获得工厂，这个超级工厂是工厂集合，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：   
 ![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/abstractfactory_pattern_uml_diagram.jpg)   
 第一步，创建接口Shape
