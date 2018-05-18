@@ -15,6 +15,7 @@ study
     * 数组全排列
 * [设计模式](#设计模式)
     * 工厂模式
+    * 抽象工厂模式
 
 算法
 ------
@@ -80,6 +81,7 @@ study
 ------
 ### 工厂模式
 参考[设计模式](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/factoryPattern)   
 工厂模式是Java中应用最多的设计模式，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：
 ![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/factory_pattern_uml_diagram.jpg)   
 第一步，创建一个接口Shape.java   
@@ -174,3 +176,224 @@ Inside Circle::draw() method.
 Inside Rectangle::draw() method.
 Inside Square::draw() method.
 ```
+
+### 抽象工厂模式
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/abstractFactoryPattern)   
+抽象工厂模式是通过超级工厂获得工厂，这个超级工厂是工厂集合，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：   
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/abstractfactory_pattern_uml_diagram.jpg)   
+第一步，创建接口Shape
+```
+public interface Shape {
+   void draw();
+}
+```
+第二步，创建类Rectangle、Square、Circle实现Shape接口
+```
+public class Rectangle implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Rectangle::draw() method.");
+   }
+}
+```
+
+```
+public class Square implements Shape {
+   @Override
+   public void draw() {
+      System.out.println("Inside Square::draw() method.");
+   }
+}
+```
+
+```
+public class Circle implements Shape {
+
+   @Override
+   public void draw() {
+      System.out.println("Inside Circle::draw() method.");
+   }
+}
+```
+
+第三步， 创建接口Colors
+```
+public interface Color {
+   void fill();
+}
+```
+第四步，创建类Red、Green、Blue实现Colors接口
+```
+public class Red implements Color {
+   @Override
+   public void fill() {
+      System.out.println("Inside Red::fill() method.");
+   }
+}
+```
+
+```
+public class Green implements Color {
+   @Override
+   public void fill() {
+      System.out.println("Inside Green::fill() method.");
+   }
+}
+```
+
+```
+public class Blue implements Color {
+   @Override
+   public void fill() {
+      System.out.println("Inside Blue::fill() method.");
+   }
+}
+```
+
+第五步，创建抽象工厂类AbstractFactory
+```
+public abstract class AbstractFactory {
+   abstract Color getColor(String color);
+   abstract Shape getShape(String shape) ;
+}
+```
+
+第六步，创建工厂类ShapeFactory、ColorFactory继承抽象工厂类
+```
+public class ShapeFactory extends AbstractFactory {
+	
+   @Override
+   public Shape getShape(String shapeType){
+   
+      if(shapeType == null){
+         return null;
+      }		
+      
+      if(shapeType.equalsIgnoreCase("CIRCLE")){
+         return new Circle();
+         
+      }else if(shapeType.equalsIgnoreCase("RECTANGLE")){
+         return new Rectangle();
+         
+      }else if(shapeType.equalsIgnoreCase("SQUARE")){
+         return new Square();
+      }
+      
+      return null;
+   }
+   
+   @Override
+   Color getColor(String color) {
+      return null;
+   }
+}
+```
+
+```
+public class ColorFactory extends AbstractFactory {
+	
+   @Override
+   public Shape getShape(String shapeType){
+      return null;
+   }
+   
+   @Override
+   Color getColor(String color) {
+   
+      if(color == null){
+         return null;
+      }		
+      
+      if(color.equalsIgnoreCase("RED")){
+         return new Red();
+         
+      }else if(color.equalsIgnoreCase("GREEN")){
+         return new Green();
+         
+      }else if(color.equalsIgnoreCase("BLUE")){
+         return new Blue();
+      }
+      
+      return null;
+   }
+}
+```
+
+第七步，创建工厂生产类FactoryProducer
+```
+public class FactoryProducer {
+   public static AbstractFactory getFactory(String choice){
+   
+      if(choice.equalsIgnoreCase("SHAPE")){
+         return new ShapeFactory();
+         
+      }else if(choice.equalsIgnoreCase("COLOR")){
+         return new ColorFactory();
+      }
+      
+      return null;
+   }
+}
+```
+
+第八步，测试AbstractFactoryPatternDemo
+```
+public class AbstractFactoryPatternDemo {
+   public static void main(String[] args) {
+
+      //get shape factory
+      AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
+
+      //get an object of Shape Circle
+      Shape shape1 = shapeFactory.getShape("CIRCLE");
+
+      //call draw method of Shape Circle
+      shape1.draw();
+
+      //get an object of Shape Rectangle
+      Shape shape2 = shapeFactory.getShape("RECTANGLE");
+
+      //call draw method of Shape Rectangle
+      shape2.draw();
+      
+      //get an object of Shape Square 
+      Shape shape3 = shapeFactory.getShape("SQUARE");
+
+      //call draw method of Shape Square
+      shape3.draw();
+
+      //get color factory
+      AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
+
+      //get an object of Color Red
+      Color color1 = colorFactory.getColor("RED");
+
+      //call fill method of Red
+      color1.fill();
+
+      //get an object of Color Green
+      Color color2 = colorFactory.getColor("Green");
+
+      //call fill method of Green
+      color2.fill();
+
+      //get an object of Color Blue
+      Color color3 = colorFactory.getColor("BLUE");
+
+      //call fill method of Color Blue
+      color3.fill();
+   }
+}
+```
+
+执行结果：   
+```
+Inside Circle::draw() method.
+Inside Rectangle::draw() method.
+Inside Square::draw() method.
+Inside Red::fill() method.
+Inside Green::fill() method.
+Inside Blue::fill() method.
+```
+
