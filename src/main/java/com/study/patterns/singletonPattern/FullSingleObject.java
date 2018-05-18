@@ -1,17 +1,22 @@
 package com.study.patterns.singletonPattern;
 
-public class SingleObject {
+/**
+ * 饱汉单例模式
+ * @author zengfa
+ *
+ */
+public class FullSingleObject {
 
 	// create an object of SingleObject
-	private static SingleObject instance = new SingleObject();
+	private static FullSingleObject instance = new FullSingleObject();
 
 	// make the constructor private so that this class cannot be
 	// instantiated
-	private SingleObject() {
+	private FullSingleObject() {
 	}
 
 	// Get the only object available
-	public static SingleObject getInstance() {
+	public static FullSingleObject getInstance() {
 		return instance;
 	}
 
