@@ -16,12 +16,26 @@ public class HungrySingleObject {
 	}
 
 	// Get the only object available
+	/*
 	public static HungrySingleObject getInstance() {
 		if (instance == null) {  
             instance = new HungrySingleObject();  
         }
 		return instance;
 	}
+	*/
+	
+	//双重校验锁的形式
+	public static HungrySingleObject getInstance() {  
+        if (instance == null) {  
+            synchronized (HungrySingleObject.class) {  
+                 if (instance == null) {  
+                	 instance = new HungrySingleObject();  
+                }  
+            }  
+        }  
+        return instance;  
+    }
 
 	public void showMessage() {
 		System.out.println("Hello World!");
