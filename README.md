@@ -16,6 +16,7 @@ study
 * [设计模式](#设计模式)
     * 工厂模式
     * 抽象工厂模式
+    * 单例模式
 
 算法
 ------
@@ -397,3 +398,94 @@ Inside Green::fill() method.
 Inside Blue::fill() method.
 ```
 
+### 单例模式
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm)，
+   [单例模式的多种实现](https://www.cnblogs.com/Kevin-mao/p/5969227.html)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/singletonPattern)   
+单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：   
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/singleton_pattern_uml_diagram.jpg)   
+单例模式分五种形式：   
+第一种形式:懒汉式，线程不安全。
+```
+public class Singleton {  
+    //私有化属性
+    private static Singleton instance;  
+    //私有化构造器
+    private Singleton (){}  
+    //提供获取单例的方法 
+    public static Singleton getInstance() {  
+         if (instance == null) {  
+             instance = new Singleton();  
+         }  
+         return instance;  
+    }  
+} 
+```
+
+第二种形式:懒汉式，线程安全。
+```
+public class Singleton {  
+    //私有化属性
+    private static Singleton instance;  
+    //私有化构造器
+    private Singleton (){}  
+    //提供了一个供外部访问类的对象的静态方法，可以直接访问
+    public static synchronized Singleton getInstance() {  
+        if (instance == null) {  
+            instance = new Singleton();  
+        }  
+        return instance;  
+    }  
+}
+```
+
+第三种形式:饿汉式。
+```
+public class Singleton{
+    //在类自己内部定义自己的一个实例，只供内部调用
+    private static final Singleton instance = new Singleton();
+    //私有化构造器
+    private Singleton(){}
+    //这里提供了一个供外部访问本类实例的静态方法，可以直接访问
+    public static Singleton getInstance(){
+        return instance;
+    }
+}
+```
+
+第四种形式:静态内部类。
+```
+public class Singleton {  
+    //静态内部类
+    private static class SingletonHolder {  
+        private static final Singleton INSTANCE = new Singleton();  
+    }  
+    //私有化构造器
+    private Singleton (){}
+    //提供一个供外部访问本类实例的静态方法
+    public static final Singleton getInstance() {  
+        return SingletonHolder.INSTANCE;  
+    }  
+} 
+```
+
+第五种形式:双重校验锁的形式。
+```
+public class Singleton {  
+    //
+    private volatile static Singleton singleton;  
+    //私有化构造器
+    private Singleton (){}
+    //提供一个供外部访问本类实例的静态方法  
+    public static Singleton getSingleton() {  
+        if (singleton == null) {  
+            synchronized (Singleton.class) {  
+                 if (singleton == null) {  
+                    singleton = new Singleton();  
+                }  
+            }  
+        }  
+        return singleton;  
+    }  
+}
+```
