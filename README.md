@@ -399,8 +399,8 @@ Inside Blue::fill() method.
 ```
 
 ### 单例模式
-参考[设计模式](https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm)   
-   [单例模式的多种实现](https://www.cnblogs.com/Kevin-mao/p/5969227.html)
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm)，
+   [单例模式的多种实现](https://www.cnblogs.com/Kevin-mao/p/5969227.html)   
 代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/singletonPattern)   
 单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例，属于创建模式的一种，这种模式提供了很好的方式获得对象，结构图如下：   
 ![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/singleton_pattern_uml_diagram.jpg)   
@@ -451,6 +451,7 @@ public class Singleton{
         return instance;
     }
 }
+```
 
 第四种形式:静态内部类。
 ```
