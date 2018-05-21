@@ -6,6 +6,11 @@ import java.net.InetSocketAddress;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.ipc.RPC;
 
+/**
+ * 参考https://my.oschina.net/u/2503731/blog/661216
+ * @author zengfa
+ *
+ */
 public class MyClient {
 
 	public static void main(String[] args) throws IOException {

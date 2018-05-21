@@ -7,6 +7,11 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.ipc.RPC;
 import org.apache.hadoop.ipc.RPC.Server;
 
+/**
+ * 参考https://my.oschina.net/u/2503731/blog/661216
+ * @author zengfa
+ *
+ */
 public class MyServer {
 
 	public static String IPAddress = "127.0.0.1";
