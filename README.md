@@ -17,6 +17,7 @@ study
     * 工厂模式
     * 抽象工厂模式
     * 单例模式
+    * 建造者模式
 
 算法
 ------
@@ -489,3 +490,9 @@ public class Singleton {
     }  
 }
 ```
+
+### 建造者模式
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/builder_pattern.htm)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/builderPattern)   
+建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式，结构图如下：  
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/builder_pattern_uml_diagram.jpg)   
