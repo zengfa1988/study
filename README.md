@@ -19,6 +19,7 @@ study
     * 单例模式
     * 建造者模式
     * 原型模式
+    * 适配器模式
 
 算法
 ------
@@ -504,3 +505,9 @@ public class Singleton {
 代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/prototypePattern)   
 原型模式（Prototype Pattern）这种模式是实现了一个原型接口，该接口用于创建当前对象的克隆。当直接创建对象的代价比较大时，则采用这种模式。例如，一个对象需要在一个高代价的数据库操作之后被创建。我们可以缓存该对象，在下一个请求时返回它的克隆，在需要的时候更新数据库，以此来减少数据库调用。结构图如下：  
 ![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/prototype_pattern_uml_diagram.jpg)   
+
+### 适配器模式
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/adapterPattern)   
+适配器模式（Adapter Pattern）是作为两个不兼容的接口之间的桥梁。这种类型的设计模式属于结构型模式，它结合了两个独立接口的功能。结构图如下：  
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/adapter_pattern_uml_diagram.jpg)   
