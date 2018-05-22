@@ -18,6 +18,7 @@ study
     * 抽象工厂模式
     * 单例模式
     * 建造者模式
+    * 原型模式
 
 算法
 ------
@@ -496,3 +497,10 @@ public class Singleton {
 代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/builderPattern)   
 建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式，结构图如下：  
 ![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/builder_pattern_uml_diagram.jpg)   
+
+
+### 原型模式
+参考[设计模式](https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm)，[设计模式解密（18）- 原型模式](https://www.cnblogs.com/JsonShare/p/7300124.html)   
+代码目录：[包地址](https://github.com/zengfa1988/study/blob/master/src/main/java/com/study/patterns/prototypePattern)   
+原型模式（Prototype Pattern）这种模式是实现了一个原型接口，该接口用于创建当前对象的克隆。当直接创建对象的代价比较大时，则采用这种模式。例如，一个对象需要在一个高代价的数据库操作之后被创建。我们可以缓存该对象，在下一个请求时返回它的克隆，在需要的时候更新数据库，以此来减少数据库调用。结构图如下：  
+![](https://github.com/zengfa1988/study/blob/master/resource/images/pattern/prototype_pattern_uml_diagram.jpg)   
