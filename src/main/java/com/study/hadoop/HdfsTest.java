@@ -27,7 +27,7 @@ public class HdfsTest {
 	
 	public static void main(String[] args) throws IOException, URISyntaxException {
 //		HdfsTest.put("E:\\study\\setting\\settings.xml", "/user/zengfa/");
-//		HdfsTest.cat("/user/zengfa");
+		HdfsTest.cat("/user/zengfa");
 //		HdfsTest.mkDir("/user/test");
 //		HdfsTest.delete("/user/test");
 //		HdfsTest.append("/user/zengfa", "appendTest");
