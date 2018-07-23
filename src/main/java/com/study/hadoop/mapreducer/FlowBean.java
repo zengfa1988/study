@@ -4,7 +4,6 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
 /**
@@ -14,17 +13,11 @@ import org.apache.hadoop.io.WritableComparable;
  */
 public class FlowBean implements WritableComparable<FlowBean>{
 
-	private String phone;
-	
-	private long upFlow;
-	
-	private long downFlow;
-	
-	private long sumFlow;
-	
-	public FlowBean(){
-		
-	}
+	private String phone;//手机号
+	private long upFlow;//上行流量
+	private long downFlow;//下行流量
+	private long sumFlow;//总流量
+	public FlowBean(){}
 	
 	public FlowBean(String phone,long upFlow,long downFlow){
 		this.phone = phone;
@@ -50,6 +43,11 @@ public class FlowBean implements WritableComparable<FlowBean>{
 		this.upFlow = in.readLong();
 		this.downFlow = in.readLong();
 		this.sumFlow = in.readLong();
+	}
+	
+	@Override
+	public int compareTo(FlowBean o) {
+		return this.sumFlow > o.getSumFlow() ? -1 : 1;
 	}
 
 	public String getPhone() {
@@ -88,12 +86,5 @@ public class FlowBean implements WritableComparable<FlowBean>{
 	public String toString() {
 		return this.upFlow + "\t" + this.downFlow + "\t" + this.sumFlow;
 	}
-
-	@Override
-	public int compareTo(FlowBean o) {
-		return this.sumFlow > o.getSumFlow() ? -1 : 1;
-	}
-	
-	
 	
 }
