@@ -1,4 +1,4 @@
-package com.study.hadoop;
+package com.study.hadoop.mapreducer;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -7,6 +7,11 @@ import java.io.IOException;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
+/**
+ * 用户流量类
+ * @author zengfa
+ *
+ */
 public class FlowBean implements WritableComparable<FlowBean>{
 
 	private String phone;
@@ -28,6 +33,8 @@ public class FlowBean implements WritableComparable<FlowBean>{
 		this.sumFlow = upFlow + downFlow;
 	}
 
+	// 只要数据在网络中进行传输，就需要序列化与反序列化
+	// 先序列化,将对象(字段)写到字节输出流当中
 	@Override
 	public void write(DataOutput out) throws IOException {
 		out.writeUTF(this.phone);
@@ -36,6 +43,7 @@ public class FlowBean implements WritableComparable<FlowBean>{
 		out.writeLong(this.sumFlow);
 	}
 
+	// 反序列化,将对象从字节输入流当中读取出来，并且序列化与反序列化的字段顺序要相同
 	@Override
 	public void readFields(DataInput in) throws IOException {
 		this.phone = in.readUTF();

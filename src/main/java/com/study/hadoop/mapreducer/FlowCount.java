@@ -1,4 +1,4 @@
-package com.study.hadoop;
+package com.study.hadoop.mapreducer;
 
 import java.io.IOException;
 
@@ -15,6 +15,13 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+/**
+ * 流量用户统计
+ * 将resource/mapreduce文件夹下的数据文件HTTP_20130313143750.dat上传到hdfs：/study/mr/flowcount/input
+ * 然后在集群中运行hadoop jar testMr.jar FlowCount /study/mr/flowcount/input /study/mr/flowcount/output
+ * @author zengfa
+ *
+ */
 public class FlowCount {
 	
 	public static void main(String[] args) throws Exception {
