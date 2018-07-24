@@ -1,4 +1,4 @@
-package com.study.hadoop;
+package com.study.hadoop.mapreducer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 
 
- * @author Administrator
+ * @author zengfa
  *
  */
 public class JoinQuery {
@@ -65,6 +65,14 @@ public class JoinQuery {
 		job.waitForCompletion(true);
 	}
 	
+	/**
+	 * 输出：
+	 * 001	Redis教程：product.txt
+	 * 001	20180531001：order.txt
+	 * 001	20180531003：order.txt
+	 * @author zengfa
+	 *
+	 */
 	public static class JoinQueryMapper extends Mapper<LongWritable, Text, Text, Text>{
 
 		Text k = new Text();
@@ -84,6 +92,15 @@ public class JoinQuery {
 		
 	}
 	
+	/**
+	 * 输入：
+	 * 001	[Redis教程：product.txt,20180531001：order.txt,20180531003：order.txt]
+	 * 输出：
+	 * 20180531001	001	Redis教程
+	 * 20180531003	001	Redis教程
+	 * @author zengfa
+	 *
+	 */
 	public static class JoinQueryReduce extends Reducer<Text, Text, Text, Text>{
 
 		Text k = new Text();
@@ -112,7 +129,6 @@ public class JoinQuery {
 				k.set(orderNo);
 				context.write(k, v);
 			}
-			
 		}
 		
 	}

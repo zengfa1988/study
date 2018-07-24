@@ -21,7 +21,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class WordCountCombiner {
 
 	/**
-	 * linux运行命令：hadoop jar testMr.jar com.study.hadoop.MyWordCount
+	 * linux运行命令：hadoop jar testMr.jar com.study.hadoop.mapreducer.WordCountCombiner /study/mr/wordcountcombiner/input /study/mr/wordcountcombiner/output
 	 * @param args
 	 * @throws IOException
 	 */
