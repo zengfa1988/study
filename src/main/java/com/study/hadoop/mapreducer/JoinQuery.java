@@ -38,9 +38,6 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 20180531004	003	Java核心技术
 20180531005	003	Java核心技术
 
-
-
-
  * @author zengfa
  *
  */
@@ -48,7 +45,7 @@ public class JoinQuery {
 
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
-		Job job = Job.getInstance(conf, "InveredIndex");
+		Job job = Job.getInstance(conf, "JoinQuery");
 		job.setJarByClass(JoinQuery.class);
 		
 		job.setMapperClass(JoinQueryMapper.class);
