@@ -1,10 +1,17 @@
-package com.study.hadoop;
+package com.study.hadoop.mapreducer;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.hadoop.mapreduce.Partitioner;
 
+/**
+ * 流量用户统计按手机号分区文件
+ * @author zengfa
+ *
+ * @param <KEY>
+ * @param <VALUE>
+ */
 public class AreaPartitioner<KEY, VALUE> extends Partitioner<KEY, VALUE>{
 
 	private static Map<String,Integer> areaMap = new HashMap<String,Integer>();

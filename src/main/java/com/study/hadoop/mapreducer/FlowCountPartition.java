@@ -1,4 +1,4 @@
-package com.study.hadoop;
+package com.study.hadoop.mapreducer;
 
 import java.io.IOException;
 
@@ -15,6 +15,11 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+/**
+ * 流量用户统计按手机号分区文件
+ * @author zengfa
+ *
+ */
 public class FlowCountPartition {
 
 	public static void main(String[] args) throws Exception {
@@ -44,7 +49,7 @@ public class FlowCountPartition {
 		 * (如果reduce task的数量为1，也能正常运行，所有的key都会分给这一个reduce task)
 		 * reduce task 或 map task 指的是，reuder和mapper在集群中运行的实例
 		 */
-		job.setNumReduceTasks(1);
+		job.setNumReduceTasks(5);
 		
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));

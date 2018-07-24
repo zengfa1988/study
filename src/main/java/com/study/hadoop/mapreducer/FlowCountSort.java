@@ -18,8 +18,9 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 /**
  * 流量用户统计并排序
- * 将resource/mapreduce文件夹下的数据文件HTTP_20130313143750.dat上传到hdfs：/study/mr/flowcount/input
- * 然后在集群中运行hadoop jar testMr.jar com.study.hadoop.mapreducer.FlowCountSort /study/mr/flowcount/input /study/mr/flowcount/output
+ *将resource/mapreduce文件夹下的数据文件HTTP_20130313143750.dat上传到hdfs：/study/mr/flowcount/input
+ *以流量用户统计的输出作为输入
+ * 然后在集群中运行hadoop jar testMr.jar com.study.hadoop.mapreducer.FlowCountSort /study/mr/flowcount/output /study/mr/flowcountsort/output
  * @author zengfa
  *
  */
