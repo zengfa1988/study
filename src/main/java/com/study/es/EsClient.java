@@ -69,10 +69,10 @@ public class EsClient {
 	}
 	
 	public static void get(){
-		TransportClient client=getTransportClient();
-		GetResponse response = client.prepareGet("tbname", "type", "3").setOperationThreaded(false).get();
-		Map source = response.getSource();
-		System.out.println(JSONObject.toJSONString(source));
+//		TransportClient client=getTransportClient();
+//		GetResponse response = client.prepareGet("tbname", "type", "3").setOperationThreaded(false).get();
+//		Map source = response.getSource();
+//		System.out.println(JSONObject.toJSONString(source));
 	}
 	
 	public static void delete(){
@@ -95,16 +95,16 @@ public class EsClient {
 	}
 	
 	public static void jsonBuilderTest(){
-		try {
-			XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-				.field("user","kimchy")
-				.field("postDate",new Date())
-				.field("message", "Elasticsearch")
-				.endObject();
-			String json = builder.string();
-			System.out.println(json);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
+//				.field("user","kimchy")
+//				.field("postDate",new Date())
+//				.field("message", "Elasticsearch")
+//				.endObject();
+//			String json = builder.string();
+//			System.out.println(json);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 }

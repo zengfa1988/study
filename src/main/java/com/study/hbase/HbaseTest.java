@@ -44,6 +44,7 @@ public class HbaseTest {
 		td.addFamily(family);
 		admin.createTable(td);
 		admin.close();
+		
 	}
 
 }
