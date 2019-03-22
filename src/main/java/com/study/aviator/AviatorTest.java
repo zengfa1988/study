@@ -71,6 +71,7 @@ public class AviatorTest {
 	
 	public static void test4() {
 		AviatorEvaluator.addFunction(new AddFunction());
+		AviatorEvaluator.addFunction(new NullFunction());
 		Double c = (Double)AviatorEvaluator.exec("my.sum(2,5)");
 		System.out.println(c);
 		
@@ -81,5 +82,8 @@ public class AviatorTest {
 		env.put("b", 2);
 		c = (Double)compiledExp.execute(env);
 		System.out.println(c);
+		
+		boolean b = (Boolean)AviatorEvaluator.execute("isNull(a)",env);
+		System.out.println(b);
 	}
 }
