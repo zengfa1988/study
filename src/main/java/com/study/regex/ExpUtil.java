@@ -28,6 +28,8 @@ public class ExpUtil {
 			ePoint = m.start();
 			sb.append(express.substring(sPoint, ePoint));
 			sPoint = m.end();
+			String s = express.substring(m.start()+2, m.end()-2);
+			System.out.println(s);
 			sb.append("|"+i+"|");
 			i++;
 		}
