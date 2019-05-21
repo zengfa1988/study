@@ -15,15 +15,15 @@ import org.apache.spark.api.java.function.VoidFunction;
 
 import scala.Tuple2;
 
-public class WordCountLocal {
+public class WordCountCluster {
 
 	public static void main(String[] args) {
 		// 第一步：创建SparkConf对象,设置相关配置信息
 		SparkConf conf = new SparkConf();
-		conf.setAppName("wordcount");
+		conf.setAppName("wordcountCluster");
 		//设置spark应用程序要连接的spark集群的master节点url,但是如果设置为local,则表示在本地运行
 		//本地执行可以直接在eclips执行的
-		conf.setMaster("local");
+//		conf.setMaster("local");
 		
 		// 第二步：创建JavaSparkContext对象，SparkContext是Spark的所有功能的入口
 		//主要作用,初始化spark应用程序所需要的组建,包括调度器,还没到spark master节点注册
@@ -36,7 +36,8 @@ public class WordCountLocal {
 		// SparkContext中，用于根据文件类型的输入源创建RDD的方法，叫做textFile()方法
 		//在Java中，创建的普通RDD都叫JavaRDD
 		//RDD中有元素的概念,如果是hdfs或本地的文件,创建的RDD,每个元素相当于文件里的一行
-		JavaRDD<String> lines = sc.textFile("D:\\study\\spark/word.txt");
+//		JavaRDD<String> lines = sc.textFile("D:\\study\\spark/word.txt");
+		JavaRDD<String> lines = sc.textFile("hdfs://spark01:9000/spark/words.txt");
 		
 		// 第四步：对初始的RDD进行transformation操作，也就是一些计算操作
 		//先将每一行拆分成单个单词
